@@ -1,0 +1,114 @@
+/* Body Background */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(to bottom right, #74ebd5, #ACB6E5); /* Gradient Background */
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Centering the board */
+.board-container {
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    width: 300px;
+    transition: all 0.3s ease;
+}
+
+h2 {
+    color: #e74c3c;  /* Winner announcement in red */
+    font-size: 28px;
+    margin-bottom: 10px;
+    animation: winnerFlash 1s infinite alternate; /* Flash effect for winner */
+}
+
+h4 {
+    color: #34495e;
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+/* Flash animation for the winner announcement */
+@keyframes winnerFlash {
+    from {
+        color: #e74c3c;
+    }
+    to {
+        color: #f39c12;
+    }
+}
+
+/* Styling the board row */
+.board-row {
+    display: flex;
+    justify-content: center;
+}
+
+/* Reset Button */
+.reset-btn {
+    background-color: #3498db;
+    color: white;
+    font-size: 16px;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: all 0.3s ease;
+}
+
+.reset-btn:hover {
+    background-color: #2980b9;
+}
+
+/* Styling the squares */
+.square {
+    background-color: #ffffff;
+    border: 2px solid #3498db;
+    font-size: 48px;
+    font-weight: bold;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100px;
+    height: 100px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.square:hover {
+    background-color: #ecf0f1;
+    transform: scale(1.1);  /* Slight enlargement on hover */
+}
+
+/* Enhanced background when square is clicked */
+.square:active {
+    background-color: #3498db;
+    color: white;
+}
+
+/* Adding some spacing between rows */
+.board-row + .board-row {
+    margin-top: 10px;
+}
+
+/* Add some responsiveness */
+@media (max-width: 600px) {
+    .square {
+        width: 80px;
+        height: 80px;
+        font-size: 32px;
+    }
+
+    .reset-btn {
+        font-size: 14px;
+        padding: 8px 16px;
+    }
+}
